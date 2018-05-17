@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+    <ion-buttons *ngIf="!noStudents" end>
+      <button ion-button outline (click)="presentPopover($event)">
+        {{student}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!loginStatus">
+      <img width="30%" hight="30%" src="assets/imgs/edufar.png" style="align-items:center;justify-content:center;" />
+    <form #loginForm="ngForm" (submit)="loginFormSubmit(loginForm)" novalidate>
+      <ion-list class="border">
+        <ion-item>
+          <ion-label fixed>Phone / Email</ion-label>
+          <ion-input ngControl="user_name" type="text" value="" minlength="7" [(ngModel)]="user.user_name" name="user_name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Password</ion-label>
+          <ion-input ngControl="password" type="password" minlength="5" [(ngModel)]="user.password" name="password" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <button ion-button full secondary type="submit">Login</button> 
+    </form>
+    
+    <div><div class="or"> OR </div> 
+      <div>
+        <button ion-button full (click)="gotoRegister()">Create an account</button>
+      </div>
+    </div>
+  </div>
+
+  <div [hidden]="!loginStatus">
+    <div [hidden]="noStudents">
+      <!-- <div class="welcome-text">Status of  <span class="name">{{student}}</span></div> -->
+      <ion-card>
+        <ion-card-header>
+          Marks
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          Attendance
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #attendanceBar></canvas>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- <button ion-button full secondary>Attendance</button> 
+      <button ion-button full secondary>School Status</button>  -->
+    </div>
+
+    <div class="no-student" [hidden]="!noStudents">
+      There are no students under your guidance ! <br/>
+      Please click the ADD button to add students.<br/>
+      
+      <ion-fab (click)="addStudent()" center><button class="add-btn" ion-fab  center middle><ion-icon name="add"></ion-icon></button></ion-fab>
+    </div>
+  </div>
+
+</ion-content>

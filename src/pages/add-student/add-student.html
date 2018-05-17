@@ -1,0 +1,66 @@
+<!--
+  Generated template for the AddStudentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Fill Student Details</ion-title>
+    <ion-buttons end>
+      <button ion-button outline (click)="studentFormSubmit(studentForm)">
+        sumbit
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form #studentForm="ngForm" (submit)="studentFormSubmit(studentForm)" novalidate>
+      <ion-list class="border"> 
+
+        <ion-item>
+          <ion-label fixed>Name</ion-label>
+          <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" name="name" required></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label fixed>Standard</ion-label>
+          <ion-select [(ngModel)]="user.standard" name="standard">
+            <ion-option value="LKG">LKG</ion-option>
+            <ion-option value="UKG">UKG</ion-option>
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="5">5</ion-option>
+            <ion-option value="6">6</ion-option>
+            <ion-option value="7">7</ion-option>
+            <ion-option value="8">8</ion-option>
+            <ion-option value="9">9</ion-option>
+            <ion-option value="10">10</ion-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label fixed>School</ion-label>
+          <ion-input ngControl="school" type="email" [(ngModel)]="user.school" name="school" required></ion-input>
+        </ion-item>
+
+        <ion-list radio-group [(ngModel)]="user.meedium" name="meedium">
+          <ion-label class="meedium-lab" fixed>Meedium</ion-label>
+          <ion-item>
+            <ion-label>Malayalam</ion-label>
+            <ion-radio value="MALAYALAM" checked></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>English</ion-label>
+            <ion-radio value="ENGLISH"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+    </form>
+</ion-content>

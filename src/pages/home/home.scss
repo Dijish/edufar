@@ -1,0 +1,44 @@
+.ios, .md {
+ 
+    page-home {
+ 
+        .scroll-content {
+            background-color: map-get($colors, light);
+        }
+ 
+        ion-card-header {
+            font-weight: bold;
+        }
+        img{
+            margin-left: 34%;
+            margin-right: 34%;
+            margin-bottom: 5%;
+        }
+        .or {
+            text-align: center;
+            margin: 3%;
+        }
+        ion-list.border.list.list-md {
+            border: solid black 2px;
+        }
+        .welcome-text {
+            text-align: center;
+        }
+        span.name {
+            size: 8px;
+            font-size: 25px;
+            color:#f53d3d; 
+        }
+
+        .no-student {
+            text-align: center;
+            font-size: 19px;
+            margin-top: 35px;
+            /* border-color: red; */
+            border: solid 2px red;
+            border-radius: 20px;
+            padding: 20px;
+        }
+    }
+ 
+}

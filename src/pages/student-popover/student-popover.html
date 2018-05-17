@@ -1,0 +1,9 @@
+
+    <ion-list radio-group [(ngModel)]="student" (ionChange)="changeStudent()" class="popover-page">
+      
+      <ion-item class="text-athelas" *ngFor="let student of students" >
+        <ion-label>{{student}}</ion-label>
+        <ion-radio value="{{student}}"></ion-radio>
+      </ion-item>
+      
+    </ion-list>

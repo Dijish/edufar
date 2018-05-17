@@ -1,0 +1,41 @@
+page-students {
+
+    ion-item.student-list.item.item-block.item-md { 
+        //background: #b2bec3;
+        border: 2px solid #4D4E63;
+        background: #fff; 
+        border-radius: 32px;
+        padding: -1px;
+        /* margin: 11px; */
+        margin-bottom: 10px;
+        /* padding: 5px; */
+        padding-left: 26px;
+        padding-top: 6px;
+    }
+//    ion-item.student-list.item.item-block.item-md:nth-child(even) { background: #dfe6e9; }
+   ion-label.label.label-md {
+        padding: 1px;
+    }
+
+    h3.s-name {
+        text-transform: uppercase;
+        /* font-style: oblique; */
+        font-size: 23px;
+    }
+
+    .s-standard {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    .no-student {
+        text-align: center;
+        font-size: 19px;
+        margin-top: 35px;
+        /* border-color: red; */
+        border: solid 2px red;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+}
