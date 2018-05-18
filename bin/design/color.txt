@@ -1,0 +1,6 @@
+input grey : #f7f7f7
+sidebar grey : #aeafb1
+button : #06bebe
+navnar : #2b323a
+dark navbar : #181f29
+bar 2nd color : #b7ce64

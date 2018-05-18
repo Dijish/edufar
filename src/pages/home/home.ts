@@ -9,6 +9,7 @@ import { UserDataProvider } from '../../providers/user-data/user-data';
 import { EditProfilePage } from '../edit-profile/edit-profile';
 import { StudentPopoverPage } from '../student-popover/student-popover';
 import { AddStudentPage } from '../add-student/add-student';
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'page-home',
@@ -30,7 +31,10 @@ export class HomePage {
   @ViewChild('attendanceBar') attendanceBar;
   attendanceChart:any;
 
-  constructor(public navCtrl: NavController,private userData:UserDataProvider,private storage: Storage,public events: Events, private popoverCtrl: PopoverController, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,private userData:UserDataProvider,private storage: Storage,public events: Events, private popoverCtrl: PopoverController, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public statusBar: StatusBar) {
+
+    this.statusBar.backgroundColorByHexString('#ffffff');
+    
     this.storage.get('name').then((val) => {
       if(val==null){
         this.loginStatus=false;

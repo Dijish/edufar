@@ -4,6 +4,8 @@
  
         .scroll-content {
             background-color: map-get($colors, light);
+            top: 20%;
+            left: 10%;
         }
  
         ion-card-header {
@@ -19,7 +21,7 @@
             margin: 3%;
         }
         ion-list.border.list.list-md {
-            border: solid black 2px;
+            // border: solid black 2px;
         }
         .welcome-text {
             text-align: center;
@@ -38,6 +40,51 @@
             border: solid 2px red;
             border-radius: 20px;
             padding: 20px;
+        }
+
+        .scroll-content, .md page-home .scroll-content {
+            background-color: #ffffff;
+        }
+
+        ion-input.input.input-md {
+            background-color: #f7f7f7;
+        }
+
+        ion-item.item.item-block.item-md.item-input.input-has-value.item-input-has-value.ng-dirty.ng-valid.ng-touched, .md page-home ion-item.item.item-block.item-md.item-input.input-has-value.item-input-has-value.ng-dirty.ng-valid.ng-touched {
+            margin-bottom: 18px;
+        }
+
+        .item-md {
+            margin-bottom: 18px;
+        }
+
+        .item-md.item-block .item-inner {
+            padding-right: 0px;
+        }
+
+        .item-md {
+            padding-right: 0px;
+            padding-left : 0px;
+        }
+        .list-md {
+            width: 90%;
+        }
+        input.text-input.text-input-md {
+            text-align: center;
+        }
+        button.login.disable-hover.button.button-md.button-default.button-default-md.button-full.button-full-md {
+            background-color: #06bebe;
+            width: 90%;
+            height: 60px;
+            border-radius: 68px;
+        }
+
+        .get-started {
+            color: #06bebe;
+            margin-top: 20px;
+            width: 90%;
+            left: 10%;
+            text-align: center;
         }
     }
  
