@@ -25,19 +25,62 @@ page-register {
     input.text-input.text-input-md {
         text-align: center;
     }
-    button.login.disable-hover.button.button-md.button-default.button-default-md.button-full.button-full-md {
+    button.login.button.button-md.button-default.button-default-md.button-full.button-full-md {
+        margin-left: 10%;
         background-color: #06bebe;
-        width: 90%;
+        width: 80%;
         height: 60px;
         border-radius: 68px;
+        text-transform: capitalize;
     }
 
-    .get-started {
+    span.sigin {
         color: #06bebe;
-        margin-top: 20px;
-        width: 90%;
-        left: 10%;
-        text-align: center;
     }
 
+    ion-icon.icon.icon-md.ion-md-plus {
+        content: ' \25CF';
+        border: 2px solid;
+        border-radius: 50%;
+        border-color: #06bebe;
+        width: 60px;
+        padding: 12px;
+        text-align: center;
+        vertical-align: middle;
+        height: 60px;
+    }
+
+    .ion-md-plus:before {
+        color: #06bebe;
+    }
+
+    ion-content.content.content-md {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    p.create-words {
+        color: #9a9494;
+        width: 90%;
+        padding-left: 11%;
+        margin-bottom: 30px;
+        padding-top: 10px;
+    padding-bottom: 50px;
+    }
+
+    h3.create {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+    ion-list.border.list.list-md {
+        padding-left: 10%;
+    }
+
+    .item-inner {
+        background-color: #f7f7f7;
+    }
+    form.ng-untouched.ng-pristine.ng-invalid {
+        margin-top: -60px;
+    }
 }

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="secondary">
-    <ion-title>Fill Student Details</ion-title>
+    <ion-title>Student Details</ion-title>
     <ion-buttons end>
       <button ion-button outline (click)="studentFormSubmit(studentForm)">
         sumbit
@@ -23,12 +23,11 @@
       <ion-list class="border"> 
 
         <ion-item>
-          <ion-label fixed>Name</ion-label>
-          <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" name="name" required></ion-input>
+          <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" name="name" placeholder="Name" required></ion-input>
         </ion-item>
       
+        <div class="label">Standard</div>
         <ion-item>
-          <ion-label fixed>Standard</ion-label>
           <ion-select [(ngModel)]="user.standard" name="standard">
             <ion-option value="LKG">LKG</ion-option>
             <ion-option value="UKG">UKG</ion-option>
@@ -46,18 +45,17 @@
         </ion-item>
         
         <ion-item>
-          <ion-label fixed>School</ion-label>
-          <ion-input ngControl="school" type="email" [(ngModel)]="user.school" name="school" required></ion-input>
+          <ion-input ngControl="school" type="email" [(ngModel)]="user.school" placeholder="School" name="school" required></ion-input>
         </ion-item>
 
+        <div class="label">Meedium</div>
         <ion-list radio-group [(ngModel)]="user.meedium" name="meedium">
-          <ion-label class="meedium-lab" fixed>Meedium</ion-label>
-          <ion-item>
-            <ion-label>Malayalam</ion-label>
-            <ion-radio value="MALAYALAM" checked></ion-radio>
+          <ion-item class="radio-label">
+            <ion-label class="radio-label">Malayalam</ion-label>
+            <ion-radio class="radio-btn" value="MALAYALAM" checked></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label>English</ion-label>
+            <ion-label class="radio-label">English</ion-label>
             <ion-radio value="ENGLISH"></ion-radio>
           </ion-item>
         </ion-list>

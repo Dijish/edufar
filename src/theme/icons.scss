@@ -43,7 +43,7 @@
   }
 }
 
-@include makeIcon(home, '\e904');
+@include makeIcon(home1, '\e904');
 @include makeIcon(down, '\e900');
 @include makeIcon(faq, '\e901');
 @include makeIcon(logout, '\e902');
@@ -51,5 +51,4 @@
 @include makeIcon(edit, '\e905');
 @include makeIcon(profile, '\e971');
 @include makeIcon(delete, '\e9ad');
-@include makeIcon(add, '\ea0a');
-@include makeIcon(home, '\e904');
+@include makeIcon(plus, '\ea0a');

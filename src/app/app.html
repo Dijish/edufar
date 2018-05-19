@@ -1,17 +1,17 @@
 <ion-menu [content]="content">
-  <ion-header>
+  <!-- <ion-header>
     <ion-toolbar>
       <div class="item-avatar profile-head ">
         <img *ngIf="user.name!=''" src="assets/imgs/adam.jpg" />
         <ion-title class="user-name">{{user.name}}</ion-title>
       </div>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
-  <ion-content>
+  <ion-content class="nav">
     <ion-list>
-      <button menuClose nav-bar ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button class="nav-menu" menuClose nav-bar ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon (click)="addStudent()" class="home-plus nav" name="{{p.icon}}"></ion-icon><span class="nav-title">{{p.title}}</span>
       </button>
     </ion-list>
   </ion-content>

@@ -1,41 +1,119 @@
 page-students {
 
-    ion-item.student-list.item.item-block.item-md { 
-        //background: #b2bec3;
-        border: 2px solid #4D4E63;
-        background: #fff; 
-        border-radius: 32px;
-        padding: -1px;
-        /* margin: 11px; */
-        margin-bottom: 10px;
-        /* padding: 5px; */
-        padding-left: 26px;
-        padding-top: 6px;
+//     ion-item.student-list.item.item-block.item-md { 
+//         //background: #b2bec3;
+//         border: 2px solid #4D4E63;
+//         background: #fff; 
+//         border-radius: 32px;
+//         padding: -1px;
+//         /* margin: 11px; */
+//         margin-bottom: 10px;
+//         /* padding: 5px; */
+//         padding-left: 26px;
+//         padding-top: 6px;
+//     }
+// //    ion-item.student-list.item.item-block.item-md:nth-child(even) { background: #dfe6e9; }
+//    ion-label.label.label-md {
+//         padding: 1px;
+//     }
+
+    img{
+        margin-left: 34%;
+        margin-right: 34%;
+        margin-bottom: 5%;
+        //margin-left: 38%;
     }
-//    ion-item.student-list.item.item-block.item-md:nth-child(even) { background: #dfe6e9; }
-   ion-label.label.label-md {
-        padding: 1px;
+    .first-cont {
+        width: 100%;
+        height: 87px;
+        background-color: #181f29;
+    }
+    
+    img {
+        margin-top: -15%;
+    }
+    
+    .second-cont {
+        width: 100%;
+        height: 100%;
+        background-color: #2b323a;
+        margin-top: -17%;
+        text-align: center;
+        color: white;
+        padding-top: 22%;
+        padding-bottom: 10%;
+        font-weight: 700;
+    }
+    ion-icon.icon.icon-md.ion-md-plus {
+        content: ' \25CF';
+        //border: 2px solid;
+        border-radius: 50%;
+        //border-color: #06bebe;
+        background-color: #181f29;
+        width: 50px;
+        padding: 9px;
+        text-align: center;
+        vertical-align: middle;
+        height: 50px;
+        margin-top: -27px;
+    }
+
+    .ion-md-plus:before {
+        color: #06bebe;
+    }
+
+    .no-student {
+        text-align: center;
+    }
+
+    .toolbar-title.toolbar-title-md {
+        margin-left: -12%;
+    }
+
+    ion-item.student-list.item.item-block.item-md {
+        background-color: #181f29;
+        margin-bottom: 15px;
+        margin-top: 9px;
+        color: white;
+    }
+
+    .student-details {
+        margin-top: 5px;
     }
 
     h3.s-name {
-        text-transform: uppercase;
-        /* font-style: oblique; */
-        font-size: 23px;
+        font-weight: 700;
     }
 
     .s-standard {
-        color: #666;
-        font-size: 14px;
-        margin-bottom: 2px;
+        font-size: 1.2rem;
     }
-    .no-student {
+
+    p.s-school {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    ion-col.bar-header.col {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    ion-col.bar-header.col {
+        border: 1px solid #06bebe;
+    }
+
+    ion-grid.grid {
+        padding: 0px;
+    }
+
+    ion-col.bar-header.col {
         text-align: center;
-        font-size: 19px;
-        margin-top: 35px;
-        /* border-color: red; */
-        border: solid 2px red;
-        border-radius: 20px;
-        padding: 20px;
+        padding: 5px;
+    }
+
+    ion-grid.grid {
+        margin-top: 10px;
     }
 
 }

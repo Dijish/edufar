@@ -18,17 +18,27 @@
 
 <ion-content padding>
 
-  <ion-fab top right edge>
+  <!-- <ion-fab top right edge>
       <button ion-fab mini (click)="addStudent()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
+  </ion-fab> -->
 
-  <div class="no-student" *ngIf="students.length==0">
-    There are no students under your guidance ! <br/>
-    Please click the add button to add students.
-  </div>
+  <div class="no-student">
+      <div class="first-cont"></div>
+      <img src="assets/imgs/avatar-icon.png" />
+      <div class="second-cont">
+        {{students.length}} Student<span *ngIf="students.length>1">s</span>
+      </div>
+      <ion-icon (click)="addStudent()" class="home-plus" name="plus"></ion-icon>
+      <!-- There are no students under your guidance ! <br/>
+      Please click the ADD button to add students.<br/>
+      
+      <ion-fab (click)="addStudent()" center><button class="add-btn" ion-fab  center middle><ion-icon name="add"></ion-icon></button></ion-fab> -->
+    </div>
 
 
   <ion-list>
+
+    
     <ion-item class="student-list" *ngFor="let student of students">
       <div class="student-details">
         <div>
@@ -46,19 +56,26 @@
 
       <ion-icon  name="trash" (click)="deleteStudent(student)"></ion-icon> -->
 
-      <div class="button-group row">
-        <div >
-            <button ion-button outline (click)="editStudent(student)">
-            Edit 
-            </button>
-        </div>
-        <div>
-            <button ion-button outline (click)="deleteStudent(student)">
-            Delete 
-            </button>
+      <ion-grid>
 
-        </div>
-      </div>
+        <ion-row>
+          <ion-col class="bar-header" (click)="editStudent(student)">
+            Edit
+              <!-- <button ion-button outline >
+                  <ion-icon (click)="addStudent()" class="home-plus" name="edit"></ion-icon>
+                  </button> -->
+          </ion-col>
+
+          <ion-col (click)="deleteStudent(student)" class="bar-header">
+            Delete
+              <!-- <button ion-button outline >
+                  <ion-icon (click)="addStudent()" class="home-plus" name="delete"></ion-icon>
+                  </button> -->
+          </ion-col>
+          </ion-row>
+          </ion-grid>
+
+      
 
 
     </ion-item>

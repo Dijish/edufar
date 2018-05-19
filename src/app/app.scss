@@ -14,6 +14,9 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@import "../theme/icons";
+
 ion-title.user-name.title.title-md {
     text-align: center;
     padding: 10px;
@@ -26,9 +29,92 @@ img {
 }
 
 button.item.item-block.item-md {
-    border: solid black 1px;
+    // border: solid black 1px;
     margin-left: 0px;
     margin-right: 3px;
     margin-top: 1px;
+}
+
+.toolbar-content.toolbar-content-md {
+    padding-left: 33%;
+    margin-left: -36px;
+    margin-right: -3px;
+    text-align: center;
+}
+
+ion-title.title.title-md {
+    margin-left: -35%;
+}
+
+.toolbar-title.toolbar-title-md {
+    font-size: 2 rem;
+    font-weight: 400;
+}
+
+ion-navbar.toolbar.toolbar-md.toolbar-md-secondary {
+    height: 100%;
+}
+ion-header.header.header-md {
+    height: 13%;
+}
+
+ion-content.content.content-md.logged-in {
+    margin-top: 74px;
+}
+
+ion-app.md [padding] {
+    padding: 0px; 
+}
+
+ion-app.md [padding] .scroll-content {
+    padding: 0px;
+}
+
+button.disable-hover.bar-button.bar-button-md.bar-button-outline.bar-button-outline-md {
+    height: 100%;
+    width: 90px;
+    color: #06bebe;
+    text-transform: CAPITALIZE;
+}
+
+ion-buttons.bar-buttons.bar-buttons-md {
+    height: 121%;
+    margin-right: -2%;
+}
+
+ion-title.title.title-md.no-student {
+    margin-left: -60%;
+}
+
+ion-icon.header-down.icon.icon-md.ion-md-down {
+    margin-bottom: -5px;
+}
+
+.list-md .item-block .item-inner {
+    border-bottom: 0px solid #dedede;
+}
+
+button.nav-menu.item.item-block.item-md {
+    margin-top: 10%;
+    /* width: 10%; */
+}
+
+.menu-inner {
+    width: 60%;
+}
+
+ion-icon {
+    //margin-right: 24px;
+}
+
+.input-wrapper {
+    
+}
+
+button.nav-menu.item.item-block.item-md {
+    color: #aeafb1;
+}
+span.nav-title {
+    margin-left: 36px;
 }
 

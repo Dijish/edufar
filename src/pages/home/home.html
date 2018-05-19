@@ -1,19 +1,20 @@
-<!-- <ion-header>
+<ion-header *ngIf="loginStatus">
   <ion-navbar color="secondary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title [ngClass]="{'no-student' : noStudents}">Edufar</ion-title>
     <ion-buttons *ngIf="!noStudents" end>
       <button ion-button outline (click)="presentPopover($event)">
         {{student}}
+        <ion-icon class="header-down" name="down"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-</ion-header> -->
+</ion-header>
 
-<ion-content padding>
-  <div *ngIf="!loginStatus">
+<ion-content style="margin-top: -5px;" [ngClass]="{'logged-in' : loginStatus}" padding>
+  <div class="login" *ngIf="!loginStatus">
       <!-- <img width="30%" hight="30%" src="assets/imgs/edufar.png" style="align-items:center;justify-content:center;" /> -->
     <form #loginForm="ngForm" (submit)="loginFormSubmit(loginForm)" novalidate>
       <ion-list class="border">
@@ -37,36 +38,111 @@
     </div>
   </div>
 
-  <div [hidden]="!loginStatus">
+  <div [hidden]="true">
+    <ion-card>
+      <ion-card-header>
+        Marks
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Attendance
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #attendanceBar></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div  class="no-student" [hidden]="!loginStatus">
     <div [hidden]="noStudents">
       <!-- <div class="welcome-text">Status of  <span class="name">{{student}}</span></div> -->
-      <ion-card>
-        <ion-card-header>
-          Marks
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #barCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
+      <div class="first-cont"></div>
+      <img src="assets/imgs/avatar-icon.png" />
+      <div class="second-cont">
+        {{students.length}} Student<span *ngIf="students.length>1">s</span>
+      </div>
+      <ion-icon (click)="addStudent()" class="home-plus" name="plus"></ion-icon>
 
-      <ion-card>
-        <ion-card-header>
-          Attendance
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #attendanceBar></canvas>
-        </ion-card-content>
-      </ion-card>
+      <ion-grid>
+
+        <ion-row>
+          <ion-col class="bar-header">
+            Mark
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="bar">
+            <div class="bar-value mark"></div>
+          </ion-col>
+          <ion-col class="value">
+            9.0
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="bar-header">
+            Attendance
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="bar">
+            <div class="bar-value attendance"></div>
+          </ion-col>
+          <ion-col class="value">
+            9.3
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="bar-header">
+            Club Activities
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="bar">
+            <div class="bar-value club"></div>
+          </ion-col>
+          <ion-col class="value">
+            6.8
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="bar-header">
+            Sports
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="bar">
+            <div class="bar-value sports"></div>
+          </ion-col>
+          <ion-col class="value">
+            5.5
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
 
       <!-- <button ion-button full secondary>Attendance</button> 
       <button ion-button full secondary>School Status</button>  -->
     </div>
 
     <div class="no-student" [hidden]="!noStudents">
-      There are no students under your guidance ! <br/>
+      <div class="first-cont"></div>
+      <img src="assets/imgs/avatar-icon.png" />
+      <div class="second-cont">
+        0 Student
+      </div>
+      <ion-icon (click)="addStudent()" class="home-plus" name="plus"></ion-icon>
+      <!-- There are no students under your guidance ! <br/>
       Please click the ADD button to add students.<br/>
       
-      <ion-fab (click)="addStudent()" center><button class="add-btn" ion-fab  center middle><ion-icon name="add"></ion-icon></button></ion-fab>
+      <ion-fab (click)="addStudent()" center><button class="add-btn" ion-fab  center middle><ion-icon name="add"></ion-icon></button></ion-fab> -->
     </div>
   </div>
 

@@ -23,15 +23,19 @@
 
 <ion-content padding>
 
+  <div class="no-student">
+    <div class="first-cont"></div>
+    <img src="assets/imgs/avatar-icon.png" />
+  </div>
+  
+
   <form #profileForm="ngForm" (submit)="profileFormSubmit(profileForm)" novalidate>
     <ion-list class="border">
       <ion-item>
-        <ion-label fixed>Name</ion-label>
-        <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" name="name" required></ion-input>
+        <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" placeholder="Name" name="name" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Password</ion-label>
-        <ion-input ngControl="password" type="password" minlength="5" [(ngModel)]="user.password" name="password" required></ion-input>
+        <ion-input ngControl="password" type="password" minlength="5" [(ngModel)]="user.password" name="password" placeholder="Password" required></ion-input>
       </ion-item>
     </ion-list>
 

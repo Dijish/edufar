@@ -76,4 +76,8 @@ export class RegisterPage {
     }
   }
 
+  gotoLogin(){
+    this.navCtrl.pop();
+  }
+
 }

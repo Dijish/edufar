@@ -21,7 +21,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: any;
 
   loginStatus=false;
   user:any={};
@@ -43,11 +43,11 @@ export class MyApp {
         this.loginStatus=true;
         this.user.name=val;
         this.pages = [
-          { title: 'Home', component: HomePage },
-          { title: 'Edit Profile', component: EditProfilePage },
-          { title: 'Students', component: StudentsPage },
-          { title: 'Logout', component: LogoutPage },
-          { title: 'FAQ', component: FaqPage }
+          { title: 'Home', component: HomePage,icon : 'home1' },
+        { title: 'Edit Profile', component: EditProfilePage ,icon : 'profile'},
+        { title: 'Students', component: StudentsPage,icon : 'student' },
+        { title: 'Logout', component: LogoutPage ,icon : 'logout'},
+        { title: 'FAQ', component: FaqPage,icon : 'faq' }
         ]; 
       }                                                             
     });
@@ -55,9 +55,9 @@ export class MyApp {
     events.subscribe('user:logout', () => {
       this.user.name='';
       this.pages = [
-        { title: 'Login', component: HomePage },
-        { title: 'Register', component: RegisterPage },
-        { title: 'FAQ', component: FaqPage }
+        { title: 'Login', component: HomePage,icon : 'home1' },
+        { title: 'Register', component: RegisterPage,icon : 'home1' },
+        { title: 'FAQ', component: FaqPage,icon : 'home1' }
       ];
     });
 
@@ -65,11 +65,11 @@ export class MyApp {
       console.log("Name : ",name);
       this.user.name=name;
       this.pages = [
-        { title: 'Home', component: HomePage },
-        { title: 'Edit Profile', component: EditProfilePage },
-        { title: 'Students', component: StudentsPage },
-        { title: 'Logout', component: LogoutPage },
-        { title: 'FAQ', component: FaqPage }
+        { title: 'Home', component: HomePage,icon : 'home1' },
+        { title: 'Edit Profile', component: EditProfilePage ,icon : 'profile'},
+        { title: 'Students', component: StudentsPage,icon : 'student' },
+        { title: 'Logout', component: LogoutPage ,icon : 'logout'},
+        { title: 'FAQ', component: FaqPage,icon : 'faq' }
       ]; 
     });
   }

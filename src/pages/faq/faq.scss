@@ -2,9 +2,19 @@ page-faq {
     h3.faq-head {
         padding-bottom: 10px;
         padding-top: 10px;
+        color:black;
     }
     
     ion-item.faq.item.item-block.item-md.active {
         background-color: #dcdde1;
     }  
+
+    .desc {
+        color: black;
+    }
+
+    .toolbar-content.toolbar-content-md {
+        padding-left: 20%;
+    }
+    
 }

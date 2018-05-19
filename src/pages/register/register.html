@@ -23,39 +23,40 @@
 
 <ion-content padding>
 
-  
+    <ion-icon name="plus"></ion-icon>
+
+    <h3 class="create">Create Account</h3>
+    <p class="create-words">Fast learning in few clicks. We hope you'll love Edufar.</p>
 
     <form #registerForm="ngForm" (submit)="registerFormSubmit(registerForm)" novalidate>
       <ion-list class="border"> 
 
         <ion-item>
-          <ion-label fixed>Name</ion-label>
-          <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" name="name" required></ion-input>
+          <ion-input ngControl="name" type="text" value="" minlength="3" [(ngModel)]="user.name" name="name" placeholder="Name" required></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-label fixed>Phone</ion-label>
-          <ion-input ngControl="phone" type="number" minlength="10" [(ngModel)]="user.phone" name="phone" required></ion-input>
+          <ion-input ngControl="phone" type="number" minlength="10" [(ngModel)]="user.phone" placeholder="Phone" placeholder="Phone" name="phone" required></ion-input>
         </ion-item>
         
         <ion-item>
-          <ion-label fixed>Email</ion-label>
-          <ion-input ngControl="email" type="email" [(ngModel)]="user.email" name="email" required></ion-input>
+          <ion-input ngControl="email" placeholder="Email" type="email" [(ngModel)]="user.email" name="email" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label fixed>Password</ion-label>
-          <ion-input ngControl="password" type="password" minlength="5" [(ngModel)]="user.password" name="password" required></ion-input>
+          <ion-input ngControl="password" placeholder="Password" type="password" minlength="5" [(ngModel)]="user.password" name="password" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label fixed>Confirm Password</ion-label>
-          <ion-input ngControl="confirm_password" type="password" minlength="5" [(ngModel)]="user.confirm_password" name="confirm_password" required></ion-input>
+          <ion-input ngControl="confirm_password" placeholder="Confirm Password" type="password" minlength="5" [(ngModel)]="user.confirm_password" name="confirm_password" required></ion-input>
         </ion-item>
 
       </ion-list>
 
 
       <!-- <button ion-button secondary full type="submit">Register</button>  -->
+      <button ion-button full secondary class="login" type="submit">Create Account</button> 
     </form>
+
+    <p class="create-words">Already have an account?<span (click)="gotoLogin()" class="sigin">Sign in</span></p>
 </ion-content>

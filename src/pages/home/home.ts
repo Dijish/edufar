@@ -32,15 +32,15 @@ export class HomePage {
   attendanceChart:any;
 
   constructor(public navCtrl: NavController,private userData:UserDataProvider,private storage: Storage,public events: Events, private popoverCtrl: PopoverController, public loadingCtrl: LoadingController, private toastCtrl: ToastController, public statusBar: StatusBar) {
-
-    this.statusBar.backgroundColorByHexString('#ffffff');
     
     this.storage.get('name').then((val) => {
       if(val==null){
         this.loginStatus=false;
+        this.statusBar.backgroundColorByHexString('#ffffff');
       }else{
         this.name=val;
         this.loginStatus=true;
+        this.statusBar.backgroundColorByHexString('#2b323a');
       }
     });
 
@@ -114,6 +114,27 @@ export class HomePage {
             this.events.publish('user:login',response.u_name);
 
             this.loginStatus=true;
+
+            let loader = this.loadingCtrl.create({
+              content: "Fetching "+response.u_name+"'s Data ...",
+              duration: 1000
+            });
+            loader.present();
+
+            this.statusBar.backgroundColorByHexString('#2b323a');
+            
+            this.userData.get_students_name(response.u_id).then(data=>{
+              console.log("Students : ",data);
+              this.students=data;
+              console.log("Students Leng : ",this.students.length);
+              if(this.students.length==0){
+                this.noStudents=true;
+              }else{
+                this.noStudents=false;
+                this.student=this.students[0];
+              }
+            })
+
           }
         }
       })

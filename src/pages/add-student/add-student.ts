@@ -89,7 +89,12 @@ export class AddStudentPage {
                       standard : this.user.standard
                     }
                     this.events.publish('editted',new_student);
-                    alert("Student Details changed !");
+                    let toast = this.toastCtrl.create({
+                      message: "Student Details changed !",
+                      duration: 3000,
+                      position: 'bottom'
+                    });
+                    toast.present();
                     this.navCtrl.pop();
                   }
                 }
@@ -99,7 +104,12 @@ export class AddStudentPage {
         })
       });
     }else{
-      alert("Invalid Data");
+      let toast = this.toastCtrl.create({
+        message: "Invalid Data !",
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
     }
   }
 
